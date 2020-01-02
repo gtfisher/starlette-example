@@ -62,11 +62,26 @@ curl --header "Content-Type: application/json" \
   --data '{"firstName":"Fred","lastName":"Smith","email":"fred.smith@test.com","company": "temp ltd", "phone": "012-345-67890"}' \
   http://localhost:8000/api/contact
 ```
+Once one or more contacts has been created you can test fetching from the api
+using:
 
-Once a contact record has been created with the command above the contacts list can be fetched with:
+* `curl http://localhost:8000/api/contact` - fetches a list of contacts
+* `curl http://localhost:8000/api/contact/1` - fetches a single of contact
+
+To update a record using the contact api use:
 
 ```bash
-curl --header "Content-Type: application/json" http://localhost:8000/api/contact
-```
+curl --header "Content-Type: application/json" \
+  --request PUT \
+  --data '{ "firstName": "John","lastName": "Smith","email": "john.smith@test.com","company": "brewers ltd","phone": "012-345-67890","creationTime": 1577808587}' \
+  http://localhost:8000/api/contact/1
+  ```
+
+To delete a record using the following:
+
+* `curl -X DELETE http://localhost:8000/api/contact/4` - this deletes record
+with  id 4
+
+This shows crud capability for the example, but because the [dataset] library includes search and query capability this is also supported.
 
 [dataset]: [https://dataset.readthedocs.io/en/latest/index.html]
