@@ -35,7 +35,7 @@ Switch the `app = Starlette(debug=True)` line to `app = Starlette()` to see a re
 
 ## Add REST routes for CRM
 
-Now a contact rest service is going to be added that stores, retieves, updates and deletes json objects from an sqllite database using [dataset]
+Now a contact rest service is going to be added that stores, retieves, updates and deletes json objects from an sqllite database using [dataset]. Dataset *provides a simple abstraction layer removes most direct SQL statements without the necessity for a full ORM model - essentially, databases can be used like a JSON file or NoSQL store.*
 
 ### Create Contact
 

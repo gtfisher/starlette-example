@@ -1,5 +1,5 @@
 aiofiles
-dataset
 jinja2
 starlette
 uvicorn
+dataset
